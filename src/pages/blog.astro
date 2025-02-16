@@ -1,0 +1,53 @@
+---
+const pageTitle = "Blog";
+
+const identity = {
+  firstName: "JGM",
+  country: "Cat",
+  occupation: "Music Producer",
+  hobbies: ["dj", "programming", "music production", "reading", "sport"],
+};
+
+const happy = true;
+const finished = false;
+const goal = 3;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{pageTitle}</title>
+  </head>
+  <body>
+    <a href="/">Home</a>
+    <a href="/about/">About</a>
+    <a href="/blog/">Blog</a>
+
+    <h1>{pageTitle}</h1>
+    <p>This is where I will post about my journey learning Astro.</p>
+    <ul>
+      <li><a href="/posts/post-1/">Post 1</a></li>
+      <li><a href="/posts/post-2/">Post 2</a></li>
+      <li><a href="/posts/post-3/">Post 3</a></li>
+    </ul>
+    <p>Facts about me:</p>
+    <ul>
+      <li>{identity.firstName}</li>
+      <li>I live in {identity.country} and I'm a {identity.occupation}</li>
+      <!-- conditional: -->
+      {
+        identity.hobbies.length > 2 && (
+          <li>
+            My hobbies are: {identity.hobbies[0]} and {identity.hobbies[1]}
+          </li>
+        )
+      }
+    </ul>
+
+
+    {happy && <p>Happy to be learning Astro and Music Programming</p>}
+    {finished && <p>I finished the tutorial</p>}
+    {goal === 3 ? <p>Cris</p> : <p>Eva</p>}
+  </body>
+</html>
