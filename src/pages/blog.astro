@@ -1,4 +1,7 @@
 ---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import "../styles/globals.css";
 const pageTitle = "Blog";
 
 const identity = {
@@ -20,9 +23,7 @@ const goal = 3;
     <title>{pageTitle}</title>
   </head>
   <body>
-    <a href="/">Home</a>
-    <a href="/about/">About</a>
-    <a href="/blog/">Blog</a>
+    <Header />
 
     <h1>{pageTitle}</h1>
     <p>This is where I will post about my journey learning Astro.</p>
@@ -45,9 +46,9 @@ const goal = 3;
       }
     </ul>
 
-
     {happy && <p>Happy to be learning Astro and Music Programming</p>}
     {finished && <p>I finished the tutorial</p>}
     {goal === 3 ? <p>Cris</p> : <p>Eva</p>}
+    <Footer />
   </body>
 </html>
